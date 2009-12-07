@@ -1,0 +1,181 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_CONF DIALOGEX 10, 22, 243, 223
+STYLE DS_SETFONT | DS_FIXEDSYS | DS_CONTROL | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "Enable Digital Point Forums Winamp Music Reporter",IDC_ENABLE,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,7,183,11
+    GROUPBOX        "Configuration",IDC_STATIC,7,20,229,152
+    EDITTEXT        IDC_EDIT_USER,72,31,104,12,ES_AUTOHSCROLL
+    LTEXT           "DPF Hash:",IDC_STATIC,17,53,47,11
+    EDITTEXT        IDC_EDIT_HASH,72,50,154,13,ES_AUTOHSCROLL
+    LTEXT           "Format:",IDC_STATIC,17,72,52,11
+    EDITTEXT        IDC_EDIT_DISPLAY_FORMAT,72,70,154,13,ES_AUTOHSCROLL
+    CONTROL         "Default: %A - %T (Artist - Title)",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,72,135,107,10
+    LTEXT           "%A - Artist",IDC_STATIC,72,90,46,13
+    LTEXT           "%T - Title",IDC_STATIC,140,90,46,13
+    LTEXT           "%L - Album",IDC_STATIC,72,101,46,13
+    LTEXT           "%Y - Year",IDC_STATIC,140,101,46,13
+    LTEXT           "%B - Bitrate (kbps)",IDC_STATIC,72,112,68,13
+    LTEXT           "%E - Length (m:ss)",IDC_STATIC,140,112,72,13
+    LTEXT           "%P - Path",IDC_STATIC,72,123,58,13
+    LTEXT           "%% - Character '%'",IDC_STATIC,140,123,71,12
+    GROUPBOX        "Status",IDC_STATIC,7,177,229,37
+    LTEXT           "Everything is working fine.",IDC_STATUS,17,189,209,19
+    LTEXT           "Note: For some Internet streams formatting is not possible. In this case plugin uses information from playlist.",IDC_STATIC,17,147,209,18
+    LTEXT           "DPF User Name:",IDC_STATIC,17,33,52,13
+END
+
+IDD_MAIN DIALOGEX 0, 0, 262, 330
+STYLE DS_SYSMODAL | DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Cancel",IDCANCEL,157,309,66,14
+    DEFPUSHBUTTON   "OK",IDOK,45,309,70,14
+    CONTROL         "",IDC_TAB,"SysTabControl32",0x0,7,7,248,242
+END
+
+IDD_About DIALOGEX 10, 22, 243, 222
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "About This Plugin",IDC_STATIC,7,7,229,208
+    CONTROL         111,1022,"Static",SS_BITMAP,126,23,98,104
+    LTEXT           "Plugin by Peteris Krumins",IDC_PETER,36,40,83,11
+    LTEXT           "peter@catonmat.net",IDC_PETER_EMAIL,36,56,69,9
+    LTEXT           "http://www.catonmat.net",IDC_PETER_URL,36,72,84,9
+    LTEXT           "Greets go to Ruslan K. Abuzant:",IDC_STATIC,25,154,105,10
+    LTEXT           "http://www.abuzant.com",IDC_ABUZANT_URL,135,154,82,10
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,19,141,205,1
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,20,174,204,1
+    LTEXT           "Written in 2006. Released in 2009. License: GNU GPL",IDC_STATIC,25,190,160,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_CONF, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 236
+        VERTGUIDE, 17
+        VERTGUIDE, 72
+        VERTGUIDE, 90
+        VERTGUIDE, 140
+        VERTGUIDE, 226
+        VERTGUIDE, 236
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 215
+        HORZGUIDE, 20
+        HORZGUIDE, 96
+        HORZGUIDE, 107
+        HORZGUIDE, 118
+        HORZGUIDE, 129
+        HORZGUIDE, 140
+    END
+
+    IDD_MAIN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 255
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 323
+    END
+
+    IDD_About, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 236
+        VERTGUIDE, 19
+        VERTGUIDE, 25
+        VERTGUIDE, 224
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 215
+        HORZGUIDE, 23
+        HORZGUIDE, 127
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_DP                  BITMAP                  "dpf.bmp"
+IDB_CAT                 BITMAP                  "catonmat.bmp"
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,116 @@
+/* basic elements */
+body {
+	color: #000000;
+	background: #fff;
+	margin: 0;
+	padding: 0;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:normal;
+	font-size: small;
+	font-family:Verdana, Times, serif;
+	text-align:center;
+	}
+
+form, input, button, select, option
+{
+	font-size: 8pt;
+	font-family:Verdana, Times, serif;
+	}
+
+a:link {
+	padding: 0 0 1px 0;	
+	text-decoration: none;
+	color: #CC3300;
+	}
+a:visited { 
+	text-decoration: none; 
+	color: #666666;
+	padding: 0 0 2px 0;
+	}
+a:hover, a:active { 
+	text-decoration: none; 
+	color: #FF0000;
+	background-image: none;
+	}
+
+#artistdropdown {
+	position: absolute;
+	font-size: x-small;
+	left: 370px;
+	top: 125px;
+	width: 480px;
+	z-index: 5;
+	text-align: left;
+	letter-spacing: 2px;
+	b.ackground-color: #E6E6E6;
+	vertical-align: bottom;
+	margin: 2px 0px 0px 0px;
+}
+
+#queryresults {
+	position: absolute;
+	font-size: x-small;
+	left: 370px;
+	top: 150px;
+	width: 480px;
+	height: 300px;
+	overflow: auto;
+	z-index: 5;
+	text-align: right;
+	letter-spacing: 2px;
+	border: 1px solid black;
+}
+
+#intropage {
+	position: absolute;
+	font-size: x-small;
+	left: 370px;
+	top: 150px;
+	width: 480px;
+	height: 300px;
+	overflow: auto;
+	z-index: 5;
+	text-align: right;
+	letter-spacing: 2px;
+	border-width: 1px;
+	border-color: black;
+	border-style: dashed;
+	background-image: url(images/starthere.png);
+	background-repeat: no-repeat;
+	background-position: top right;
+}
+
+#searchform {
+	position: absolute;
+	font-size: x-small;
+	left: 370px;
+	top: 455px;
+	width: 480px;
+	z-index: 5;
+	text-align: left;
+	letter-spacing: 2px;
+	b.ackground-color: #E6E6E6;
+	vertical-align: middle;
+}
+
+#toplinks {
+	position: absolute;
+	font-size: x-small;
+	left: 370px;
+	top: 110px;
+	width: 480px;
+	z-index: 5;
+	text-align: left;
+	letter-spacing: 2px;
+	b.ackground-color: #D2D2D2;
+	vertical-align: middle;
+}
+
+#footer {
+	padding-left: 160px;
+	font-size: x-small;
+	margin-top: -13px;
+	
+}

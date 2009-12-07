@@ -1,0 +1,81 @@
+This is the documentation on how to compile the DPF Winamp music reporter
+plugin. I currently have it ready for compilation with Visual Studio. The
+plugin uses LibCurl to communicate via HTTP.
+
+If you don't have Visual Studio, get the Visual Studio C++ Express Edition at
+http://www.microsoft.com/express/download/default.aspx
+
+LibCurl can be downloaded at http://curl.haxx.se/download.html. Get the .zip
+package and extract it to ./libcurl directory in the plugin's source tree,
+then follow the instructions below on how to compile it.
+
+The plugin is also documented on my website. You can also download the source
+code there and the compiled version of plugin:
+
+    http://www.catonmat.net/projects/dpf-winamp-music-reporter/
+
+------------------------------------------------------------------------------
+
+Table of contents:
+
+    [1] Compiling LibCurl.
+    [2] Compiling the plugin.
+    [3] How to use the plugin?
+
+
+[1]-Compiling-LibCurl---------------------------------------------------------
+
+Now that you have downloaded LibCurl and extracted it to ./libcurl directory,
+navigate to this directory from the command line.
+
+There is a very detailed explanation on how to compile LibCurl in
+./libcurl/doc, but here is brief summary.
+
+First, run vcvars32 to set the environment variables needed for Visual Studio:
+
+    > vcvars32
+    Setting environment for using Microsoft Visual Studio 2008 x86 tools.
+
+Next run nmake vc:
+
+    > nmake vc
+    ...
+
+This will compile LibCurl and put the static library that we need (plugin
+links to libcurl statically) in ./libcurl/lib/release directory. The static
+library will be named 'libcurl.lib'. Make sure it is there.
+
+Now you can proceed to compiling the plugin.
+
+
+[2]-Compiling-the-plugin------------------------------------------------------
+
+The plugin is the easiest compiled from Visual Studio. The source code of
+plugin is located in ./src directory and the Visual Studio project file is
+named music_reporter.sln.
+
+The compilation is trivial. I have already set all the necessary options for
+successful compilation. Select Build -> Build Solution from the upper menu and
+Visual Studio should compile the plugin without any problems.
+
+The resulting plugin will be placed in ./src/Release directory and it will be
+named "gen_digitalpoint.dll".
+
+If something doesn't work quite right, you can always get the compiled version
+at my website:
+
+    http://www.catonmat.net/download/gen_digitalpoint.dll
+
+
+[3]-How-to-use-the-plugin-----------------------------------------------------
+
+See readme.txt for the most detailed explanation.
+
+
+------------------------------------------------------------------------------
+
+
+Sincerely,
+Peteris Krumins
+http://www.catonmat.net
+

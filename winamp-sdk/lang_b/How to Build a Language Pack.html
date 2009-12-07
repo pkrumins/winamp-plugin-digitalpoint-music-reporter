@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+  <meta name="generator" content=
+  "HTMLTrim (vers 1st June 2004), see htmltrim.sf.net">
+  <meta name="generator" content=
+  "HTML Tidy for Windows (vers 1st February 2004), see www.w3.org">
+  <meta http-equiv="Content-Type" content=
+  "text/html; charset=us-ascii">
+
+  <title>How to Build a Language Pack</title>
+  <link href="css/dro.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <table border="0" width="100%">
+    <tbody>
+      <tr>
+        <td align="center">
+          <table width="590" border="0">
+            <tbody>
+              <tr>
+                <td align="center">
+                  <h1>How to Build a Language Pack</h1>
+                </td>
+              </tr>
+
+              <tr>
+                <td align="left">
+                  <p>The purpose of this short guide is to help you
+                  through the process of making a Language Pack for
+                  Winamp.</p>
+
+                  <table width="100%" border="0">
+                    <colgroup span="5" width="20%"></colgroup>
+
+                    <tbody>
+                      <tr>
+                        <td align="center"><a class="header" href=
+                        "#1">What is it?</a></td>
+
+                        <td align="center"><a class="header" href=
+                        "#2">What do i need?</a></td>
+
+                        <td align="center"><a class="header" href=
+                        "#3">What to do with it?</a></td>
+
+                        <td align="center"><a class="header" href=
+                        "#4">and Finally...</a></td>
+                      </tr>
+                    </tbody>
+                  </table><br>
+                  <br>
+
+                  <h2><u><a name="#1" id="#1">What is a Language
+                  Pack?</a></u></h2>
+
+                  <p>A language allows you to view the
+                  <strong><u>core</u> *</strong> settings of Winamp
+                  in a given language by providing a translated
+                  version of the dialogs. Then when Winamp is
+                  loaded, it will use the translated versions of
+                  the menus, dialogs, etc in place of the standard
+                  English US interface.<br>
+                  <br>
+                  <strong>*</strong> <i>this means that you cannot
+                  alter the language of the plugins that ship with
+                  Winamp with a language pack</i></p><br>
+
+                  <h2><u><a name="#2" id="#2">What do i need to
+                  make a Language Pack?</a></u></h2>
+
+                  <p>To make a language pack you will need the
+                  following files (all of which can be found in the
+                  Winamp SDK).</p>
+
+                  <ul>
+                    <li>resource.h - <i>defines the ID for menus,
+                    dialogs, etc</i></li>
+
+                    <li>main.c - required to create a valid
+                    dll</li>
+
+                    <li>resource.hm - <i>needed by main.rc</i></li>
+
+                    <li>main.rc - <i>main file which holds text to
+                    translate of menus and dialogs</i></li>
+
+                    <li>tips.txt - <i>keyboard shortcut information
+                    file which needs to be translated</i></li>
+                  </ul>
+
+                  <p>Then you will need a C/C++ compiler capable of
+                  generating a resource dll (a MSVC 6 project is
+                  supplied in the SDK though it should be easy to
+                  build the file in other compilers).<br>
+                  <br>
+                  <i>When building the language file, it's
+                  recommended to build it in 'Release' mode
+                  otherwise you may get build errors.</i><br>
+                  [ This is the case for MSVC and due to this the
+                  included project file has had the 'Debug' build
+                  mode removed. ]</p><br>
+
+                  <h2><u><a name="#3" id="#3">What to do with the
+                  files?</a></u></h2>
+
+                  <p>The two files to be concerned about are
+                  <strong>main.rc</strong> and
+                  <strong>tips.txt</strong>. With both of these
+                  files, you can open them in your chosen text
+                  editor and then change all relevant language
+                  strings (main.rc) or text (tips.txt) into the
+                  language required.<br>
+                  <br>
+                  The tips.txt is just a plain text file and it
+                  should be clear that you need to update all of
+                  the text in that file.<br>
+                  With main.rc, it is still only a text file but
+                  may appear to be a bit confusing and overwhelming
+                  if you have never opened a resource file (which
+                  is what the file is). The contents of the file
+                  are just text, with different formatting that the
+                  resource compiler in C/C++ can understand.<br>
+                  <br>
+                  For example with a menu item, it is specified as
+                  follows:</p>
+                  <pre>
+<strong>        MENUITEM "About &amp;Winamp...",            WINAMP_HELP_ABOUT</strong>
+</pre>
+
+                  <p>So to alter the language for this menu item,
+                  you just have to alter the <strong>"About
+                  &amp;Winamp..."</strong>, nothing else (otherwise
+                  the file may not compile correctly).<br>
+                  <br>
+                  <br>
+                  With the main.rc file, if you want to use "
+                  (double quote) then you need to put it into the
+                  file as \". This is due to the way that C/C++
+                  compilers deal with "s (double quotes) since they
+                  are used to indicate the start and end of a text
+                  string.<br>
+                  <br>
+                  Once the files have been translated, then the
+                  language pack files need to be compiled into a
+                  resource dll. To be recognised by Winamp, the
+                  final compiled file will need to have an
+                  extension of <strong>lng</strong> <i>e.g.</i>
+                  English.lng.<br>
+                  <br>
+                  How you compile the files will be based on your
+                  given compiler which you'll need to check the
+                  documentation of to determine how to build the
+                  file correctly with the given files (or if you
+                  are using MSVC, then just use the project file
+                  that comes with the SDK).</p><br>
+
+                  <h2><a name="#4" id="#4"><u>What to do
+                  next?</u></a></h2>
+
+                  <p>Once the file has been made, you need to copy
+                  it into your Winamp directory (where winamp.exe
+                  is). Then startup Winamp and select the language
+                  and then allow Winamp to reboot for the new file
+                  to be loaded.<br>
+                  <br>
+                  Then you need to go through and check that the
+                  file is fine, altering things if necessary and
+                  rebuilding the language pack so it all fits
+                  correctly on the dialog pages (though if you've
+                  the knowledge then you could always alter the
+                  position / sizes of the controls to give you some
+                  more space but i won't go into that here).<br>
+                  <br>
+                  <br>
+                  Once you're happy with your language pack, the
+                  next thing to do is to <a href=
+                  "http://www.winamp.com/user/submit.php">submit
+                  it</a> to <a href=
+                  "http://www.winamp.com">winamp.com</a>. For this
+                  you will need to package the file in an installer
+                  and provide some extra information and files
+                  (more details can be found during the submission
+                  process). Then sit back and wait for the pack to
+                  be released (as long as it passes the submission
+                  checks).<br>
+                  <br>
+                  Happy translating!</p>
+
+                  <p><strong>by Darren Owen aka DrO (30/07/2004 -
+                  rev #2)</strong></p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
