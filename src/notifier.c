@@ -193,16 +193,28 @@ create_get_url(const char *user, const char *hash, const char *song)
 {
     #define URL_RET_BUF_SIZE 2048
 
+    char *escaped_user, *returl;
+
     const char str_format[] = "%s?u=%s&p=%s&song=%s";
     const char DPF_ITUNES_URL[] = "http://forums.digitalpoint.com/itunes.php";
-	/*const char DPF_ITUNES_URL[] = "http://192.168.1.2:5000/itunes.php";*/
+    /*const char DPF_ITUNES_URL[] = "http://192.168.1.2:5000/itunes.php";*/
 
-    char *returl = malloc(sizeof(char) * URL_RET_BUF_SIZE);
-    if (returl == NULL) return NULL;
+    returl = malloc(sizeof(char) * URL_RET_BUF_SIZE);
+    if (returl == NULL) {
+        return NULL;
+    }
 
-    _snprintf(returl, URL_RET_BUF_SIZE, str_format, DPF_ITUNES_URL, user, hash, song);
+	/* TODO: move to static storage as user has to be escaped just once */
+    escaped_user = curl_easy_escape(curl, user, 0);
+    if (escaped_user == NULL) {
+        free(returl);
+        return NULL;
+    }
 
-	return returl;
+    _snprintf(returl, URL_RET_BUF_SIZE, str_format, DPF_ITUNES_URL, escaped_user, hash, song);
+
+    free(escaped_user);
+    return returl;
 }
 
 static void
